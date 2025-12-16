@@ -143,10 +143,11 @@ const StockAdjustment: React.FC = () => {
     item.sku.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Get selected adjustment type details
-  const selectedAdjustmentType = adjustmentTypes.find(
+  // Get selected adjustment type details (reserved for future validation/display)
+  const _selectedAdjustmentType = adjustmentTypes.find(
     (type) => type.value === formData.adjustment_type
   );
+  void _selectedAdjustmentType;
 
   // Calculate new stock level
   const calculateNewStock = (): number => {

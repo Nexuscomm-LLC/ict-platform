@@ -77,7 +77,7 @@ const AvailabilityMatrix: React.FC<AvailabilityMatrixProps> = ({
   const groupByResource = (): Map<number, Map<string, ResourceAvailability>> => {
     const grouped = new Map<number, Map<string, ResourceAvailability>>();
 
-    availability.forEach((item) => {
+    availability.forEach((item: ResourceAvailability) => {
       if (!grouped.has(item.resource_id)) {
         grouped.set(item.resource_id, new Map());
       }

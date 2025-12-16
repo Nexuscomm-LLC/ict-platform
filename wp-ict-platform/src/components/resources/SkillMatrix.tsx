@@ -21,7 +21,6 @@ import {
   fetchTechnicianSkills,
   updateTechnicianSkills,
   selectTechnicianSkills,
-  selectTechnicianSkillsById,
   selectResourcesLoading,
   selectResourcesError,
 } from '../../store/slices/resourcesSlice';
@@ -136,8 +135,8 @@ const SkillMatrix: React.FC<SkillMatrixProps> = ({
     }
   };
 
-  // Handle delete skill
-  const handleDeleteSkill = async (technicianId: number, skillName: string) => {
+  // Handle delete skill (reserved for future UI implementation)
+  const _handleDeleteSkill = async (technicianId: number, skillName: string) => {
     if (!confirm(`Are you sure you want to remove the skill "${skillName}"?`)) {
       return;
     }
@@ -195,8 +194,10 @@ const SkillMatrix: React.FC<SkillMatrixProps> = ({
     });
   };
 
+  void _handleDeleteSkill; // Reserved for future delete UI
+
   const skillNames = getAllSkillNames();
-  const filteredTechnicianIds = technicianIds.filter((id) => {
+  const filteredTechnicianIds = technicianIds.filter((_id) => {
     if (!searchTerm) return true;
     // In real implementation, would filter by technician name
     return true;

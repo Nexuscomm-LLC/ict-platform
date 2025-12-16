@@ -27,12 +27,11 @@ import {
   selectResourcesError,
   selectHasConflicts,
 } from '../../store/slices/resourcesSlice';
-import { fetchProjects } from '../../store/slices/projectsSlice';
 import {
   ProjectResource,
   ResourceFormData,
   ResourceType,
-  ResourceStatus,
+  ResourceConflict,
 } from '../../types';
 
 interface ResourceAllocationProps {
@@ -236,7 +235,7 @@ const ResourceAllocation: React.FC<ResourceAllocationProps> = ({
           <h4>Resource Conflicts Detected</h4>
           <p>The following conflicts exist for this allocation:</p>
           <ul>
-            {conflicts.map((conflict, index) => (
+            {conflicts.map((conflict: ResourceConflict, index: number) => (
               <li key={index}>
                 <strong>
                   {conflict.resource_type} #{conflict.resource_id}

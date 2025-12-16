@@ -45,7 +45,7 @@ const initialState: InventoryState = {
  */
 export const fetchInventory = createAsyncThunk(
   'inventory/fetchInventory',
-  async (params?: {
+  async (params: {
     page?: number;
     per_page?: number;
     search?: string;
@@ -53,9 +53,16 @@ export const fetchInventory = createAsyncThunk(
     location?: string;
     is_active?: boolean;
     low_stock?: boolean;
-  }) => {
+  } | undefined) => {
     const response = await inventoryAPI.getAll(params);
-    return response.data!;
+    // Return paginated response structure for the builder
+    return {
+      data: response.data || [],
+      page: params?.page || 1,
+      per_page: params?.per_page || 20,
+      total: response.data?.length || 0,
+      total_pages: 1,
+    } as PaginatedResponse<InventoryItem>;
   }
 );
 

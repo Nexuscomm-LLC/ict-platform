@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { WorkboxPlugin } = require('workbox-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -27,6 +27,12 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           use: {
             loader: 'ts-loader',
+            options: {
+              transpileOnly: true, // Skip type checking (use tsc for that)
+              compilerOptions: {
+                noEmit: false, // Override tsconfig for webpack
+              },
+            },
           },
         },
         {
@@ -78,7 +84,7 @@ module.exports = (env, argv) => {
       }),
       ...(isProduction
         ? [
-            new WorkboxPlugin.GenerateSW({
+            new GenerateSW({
               clientsClaim: true,
               skipWaiting: true,
               runtimeCaching: [

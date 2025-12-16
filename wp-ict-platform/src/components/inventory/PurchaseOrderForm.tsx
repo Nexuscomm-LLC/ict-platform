@@ -65,7 +65,8 @@ const PurchaseOrderForm: React.FC<PurchaseOrderFormProps> = ({
   onCancel,
 }) => {
   const dispatch = useDispatch();
-  const currentPO = useSelector(selectCurrentPO);
+  const _currentPO = useSelector(selectCurrentPO); // Reserved for future use
+  void _currentPO; // Suppress unused warning
   const loading = useSelector(selectPOLoading);
   const error = useSelector(selectPOError);
   const inventory = useSelector(selectInventory);

@@ -18,7 +18,6 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   fetchCalendarEvents,
   updateResourceAllocation,
-  deleteResourceAllocation,
   checkResourceConflicts,
   clearConflicts,
   selectCalendarEvents,
@@ -26,13 +25,13 @@ import {
   selectResourceConflicts,
   selectHasConflicts,
 } from '../../store/slices/resourcesSlice';
-import { ResourceType, CalendarEvent } from '../../types';
+import { ResourceType } from '../../types';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
 import interactionPlugin from '@fullcalendar/interaction';
-import type { EventClickArg, EventDropArg, DateSelectArg, EventContentArg } from '@fullcalendar/core';
+import type { EventClickArg, EventDropArg, DateSelectArg, EventContentArg, EventInput } from '@fullcalendar/core';
 
 interface ResourceCalendarProps {
   projectId?: number;
@@ -44,13 +43,14 @@ interface ResourceCalendarProps {
 }
 
 const ResourceCalendar: React.FC<ResourceCalendarProps> = ({
-  projectId,
+  projectId: _projectId,
   resourceType,
   resourceId,
   editable = false,
   onEventClick,
   onEventCreate,
 }) => {
+  void _projectId; // Reserved for future filtering
   const dispatch = useAppDispatch();
   const calendarRef = useRef<FullCalendar>(null);
 
@@ -371,7 +371,7 @@ const ResourceCalendar: React.FC<ResourceCalendarProps> = ({
             center: 'title',
             right: '',
           }}
-          events={events}
+          events={events.map(e => ({ ...e, id: String(e.id) })) as EventInput[]}
           editable={editable}
           selectable={editable}
           selectMirror={true}

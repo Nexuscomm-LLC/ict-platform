@@ -1,0 +1,45 @@
+/**
+ * Shared Variables Module
+ *
+ * @package ICT_Platform
+ * @since   1.0.0
+ */
+
+@use 'sass:color';
+
+// Colors
+$primary-color: #2271b1;
+$success-color: #00a32a;
+$danger-color: #d63638;
+$warning-color: #dba617;
+$info-color: #72aee6;
+
+// Inventory colors (aliased)
+$color-primary: $primary-color;
+$color-success: $success-color;
+$color-danger: $danger-color;
+$color-warning: $warning-color;
+$color-info: $info-color;
+$color-gray-light: #f0f0f1;
+$color-gray: #dcdcde;
+$color-gray-dark: #787c82;
+$color-text: #1d2327;
+$color-text-light: #50575e;
+$color-border: #c3c4c7;
+
+// Spacing
+$spacing-unit: 8px;
+
+// Layout
+$border-radius: 4px;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+$transition: all 0.2s ease;
+
+// Color adjustment functions using modern syntax
+@function darken-color($color, $amount) {
+  @return color.adjust($color, $lightness: -$amount);
+}
+
+@function lighten-color($color, $amount) {
+  @return color.adjust($color, $lightness: $amount);
+}

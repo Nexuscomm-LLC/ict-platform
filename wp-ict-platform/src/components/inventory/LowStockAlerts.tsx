@@ -137,10 +137,9 @@ const LowStockAlerts: React.FC<LowStockAlertsProps> = ({
     dispatch(fetchLowStockItems() as any);
   };
 
-  const handleReorder = (item: InventoryItem) => {
-    // This would typically open a purchase order form or modal
-    console.log('Reorder item:', item);
-    // Could dispatch action to create PO or open modal
+  const handleReorder = (_item: InventoryItem) => {
+    // TODO: Implement reorder functionality
+    // This would typically open a purchase order form or dispatch action
   };
 
   const sortedItems = sortItems(lowStockItems);

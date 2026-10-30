@@ -24,7 +24,7 @@ class SignatureController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'signatures';
+    protected $rest_base = 'signatures';
 
     /**
      * Register routes for signatures.

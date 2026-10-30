@@ -24,7 +24,7 @@ class EquipmentController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'equipment';
+    protected $rest_base = 'equipment';
 
     /**
      * Register routes for equipment.

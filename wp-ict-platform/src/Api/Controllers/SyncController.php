@@ -18,7 +18,7 @@ use WP_Error;
  */
 class SyncController extends AbstractController
 {
-    protected string $rest_base = 'sync';
+    protected $rest_base = 'sync';
     private SyncLogger $syncLogger;
 
     public function __construct(\ICT_Platform\Util\Helper $helper, \ICT_Platform\Util\Cache $cache, SyncLogger $syncLogger)

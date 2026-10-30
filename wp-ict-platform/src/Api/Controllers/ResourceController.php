@@ -17,7 +17,7 @@ use WP_Error;
  */
 class ResourceController extends AbstractController
 {
-    protected string $rest_base = 'resources';
+    protected $rest_base = 'resources';
 
     public function registerRoutes(): void
     {

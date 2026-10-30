@@ -22,7 +22,7 @@ class TimeEntryController extends AbstractController
     /**
      * Route base
      */
-    protected string $rest_base = 'time-entries';
+    protected $rest_base = 'time-entries';
 
     /**
      * Register routes
@@ -466,7 +466,7 @@ class TimeEntryController extends AbstractController
      *
      * @return array<string, array<string, mixed>>
      */
-    private function getCollectionParams(): array
+    protected function getCollectionParams(): array
     {
         return [
             'page'          => ['type' => 'integer', 'default' => 1, 'minimum' => 1],

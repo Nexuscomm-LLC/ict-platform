@@ -24,7 +24,7 @@ class DocumentController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'documents';
+    protected $rest_base = 'documents';
 
     /**
      * Allowed file types for upload.

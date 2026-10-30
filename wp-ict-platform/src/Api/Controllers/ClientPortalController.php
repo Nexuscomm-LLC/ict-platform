@@ -24,7 +24,7 @@ class ClientPortalController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'client-portal';
+    protected $rest_base = 'client-portal';
 
     /**
      * Register routes for client portal.

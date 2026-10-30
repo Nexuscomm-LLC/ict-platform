@@ -22,7 +22,7 @@ class ProjectController extends AbstractController
     /**
      * Route base
      */
-    protected string $rest_base = 'projects';
+    protected $rest_base = 'projects';
 
     /**
      * Register routes
@@ -401,7 +401,7 @@ class ProjectController extends AbstractController
      *
      * @return array<string, array<string, mixed>>
      */
-    private function getCollectionParams(): array
+    protected function getCollectionParams(): array
     {
         return [
             'page'     => [

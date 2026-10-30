@@ -24,7 +24,7 @@ class ExpenseController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'expenses';
+    protected $rest_base = 'expenses';
 
     /**
      * Register routes for expenses.

@@ -17,7 +17,7 @@ use WP_Error;
  */
 class PurchaseOrderController extends AbstractController
 {
-    protected string $rest_base = 'purchase-orders';
+    protected $rest_base = 'purchase-orders';
 
     public function registerRoutes(): void
     {

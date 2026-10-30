@@ -65,7 +65,7 @@ class Container implements ContainerInterface
      * @param Closure|string|object|null  $concrete   The concrete implementation
      * @param bool                        $singleton  Whether to treat as singleton
      */
-    public function bind(string $abstract, Closure|string|object|null $concrete = null, bool $singleton = false): self
+    public function bind(string $abstract, string|object|null $concrete = null, bool $singleton = false): self
     {
         $this->bindings[$abstract] = $concrete ?? $abstract;
         $this->singletons[$abstract] = $singleton;
@@ -79,7 +79,7 @@ class Container implements ContainerInterface
      * @param string                      $abstract  The abstract type
      * @param Closure|string|object|null  $concrete  The concrete implementation
      */
-    public function singleton(string $abstract, Closure|string|object|null $concrete = null): self
+    public function singleton(string $abstract, string|object|null $concrete = null): self
     {
         return $this->bind($abstract, $concrete, true);
     }
@@ -159,7 +159,7 @@ class Container implements ContainerInterface
      * @return mixed The built instance
      * @throws ContainerException If the type cannot be built
      */
-    private function build(Closure|string|object $concrete, array $parameters = []): mixed
+    private function build(string|object $concrete, array $parameters = []): mixed
     {
         // If it's a Closure, execute it
         if ($concrete instanceof Closure) {

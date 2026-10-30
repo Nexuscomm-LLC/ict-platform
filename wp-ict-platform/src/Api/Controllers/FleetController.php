@@ -24,7 +24,7 @@ class FleetController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'fleet';
+    protected $rest_base = 'fleet';
 
     /**
      * Register routes for fleet management.

@@ -24,7 +24,7 @@ class QrCodeController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'qr-codes';
+    protected $rest_base = 'qr-codes';
 
     /**
      * Register routes for QR codes.

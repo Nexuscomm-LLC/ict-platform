@@ -17,7 +17,7 @@ use WP_Error;
  */
 class ReportController extends AbstractController
 {
-    protected string $rest_base = 'reports';
+    protected $rest_base = 'reports';
 
     public function registerRoutes(): void
     {

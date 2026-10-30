@@ -24,7 +24,7 @@ class ActivityController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'activity';
+    protected $rest_base = 'activity';
 
     /**
      * Register routes for activity feed.

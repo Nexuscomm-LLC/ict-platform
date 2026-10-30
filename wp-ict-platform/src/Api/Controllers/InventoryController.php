@@ -19,7 +19,7 @@ use WP_Error;
  */
 class InventoryController extends AbstractController
 {
-    protected string $rest_base = 'inventory';
+    protected $rest_base = 'inventory';
 
     public function registerRoutes(): void
     {
@@ -245,7 +245,7 @@ class InventoryController extends AbstractController
         ];
     }
 
-    private function getCollectionParams(): array
+    protected function getCollectionParams(): array
     {
         return [
             'page'     => ['type' => 'integer', 'default' => 1],

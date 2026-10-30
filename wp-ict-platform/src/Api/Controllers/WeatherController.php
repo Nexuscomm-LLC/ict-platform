@@ -24,7 +24,7 @@ class WeatherController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'weather';
+    protected $rest_base = 'weather';
 
     /**
      * Weather API base URL (using Open-Meteo - free, no API key required).

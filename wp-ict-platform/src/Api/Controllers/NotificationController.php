@@ -24,7 +24,7 @@ class NotificationController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'notifications';
+    protected $rest_base = 'notifications';
 
     /**
      * Register routes for notifications.

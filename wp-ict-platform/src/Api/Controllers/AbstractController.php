@@ -25,7 +25,7 @@ abstract class AbstractController extends WP_REST_Controller
     /**
      * API namespace
      */
-    protected string $namespace = Router::NAMESPACE;
+    protected $namespace = Router::NAMESPACE;
 
     /**
      * Helper utility instance
@@ -178,6 +178,16 @@ abstract class AbstractController extends WP_REST_Controller
         }
 
         return true;
+    }
+
+    /**
+     * Route args for list endpoints (context, page, per_page, search).
+     *
+     * @return array<string, array<string, mixed>>
+     */
+    protected function getCollectionParams(): array
+    {
+        return $this->get_collection_params();
     }
 
     /**

@@ -24,7 +24,7 @@ class VoiceNoteController extends AbstractController
      *
      * @var string
      */
-    protected string $rest_base = 'voice-notes';
+    protected $rest_base = 'voice-notes';
 
     /**
      * Maximum file size (20MB).

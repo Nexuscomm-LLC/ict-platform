@@ -12,8 +12,8 @@ import {
   Search,
   Sun,
   Moon,
-  Wifi,
   WifiOff,
+  Router,
 } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { logout } from '../store/slices/authSlice';
@@ -25,6 +25,7 @@ const NAV_ITEMS = [
   { path: '/time-tracking', icon: Clock, label: 'Time Tracking' },
   { path: '/projects', icon: FolderKanban, label: 'Projects' },
   { path: '/inventory', icon: Package, label: 'Inventory' },
+  { path: '/unifi', icon: Router, label: 'UniFi' },
   { path: '/settings', icon: Settings, label: 'Settings' },
 ];
 
@@ -236,7 +237,7 @@ export default function Layout() {
           color: var(--text-muted); padding: 8px;
         }
         .logout-btn:hover { color: #ef4444; }
-        .main-wrapper { flex: 1; display: flex; flex-direction: column; }
+        .main-wrapper { flex: 1; display: flex; flex-direction: column; min-width: 0; }
         .top-bar {
           background: var(--bg-primary); border-bottom: 1px solid var(--border-color);
           padding: 12px 24px; display: flex; align-items: center; gap: 16px;

@@ -24,6 +24,7 @@ use ICT_Platform\Api\Controllers\QrCodeController;
 use ICT_Platform\Api\Controllers\ActivityController;
 use ICT_Platform\Api\Controllers\WeatherController;
 use ICT_Platform\Api\Controllers\ClientPortalController;
+use ICT_Platform\Api\Controllers\UnifiController;
 
 /**
  * REST API Router
@@ -72,6 +73,7 @@ class Router
         'activity'        => ActivityController::class,
         'weather'         => WeatherController::class,
         'client-portal'   => ClientPortalController::class,
+        'unifi'           => UnifiController::class,
     ];
 
     /**

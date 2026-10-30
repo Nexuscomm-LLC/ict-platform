@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import { useOnlineStatus } from './hooks';
 import Layout from './components/Layout';
-import { Dashboard, TimeTracking, Projects, Inventory, Login } from './pages';
+import { Dashboard, TimeTracking, Projects, Inventory, Login, Unifi } from './pages';
 import { useEffect } from 'react';
 
 function AppContent() {
@@ -29,6 +29,7 @@ function AppContent() {
           <Route path="/projects/:id" element={<Projects />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/inventory/:id" element={<Inventory />} />
+          <Route path="/unifi" element={<Unifi />} />
           <Route path="/settings" element={<Dashboard />} />
         </Route>
       </Routes>

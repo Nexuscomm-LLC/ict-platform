@@ -18,7 +18,7 @@ import type { InventoryItem } from '../types';
 export default function Inventory() {
   const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { items, selectedItem, isLoading, filters } = useAppSelector((state) => state.inventory);
+  const { items, isLoading, filters } = useAppSelector((state) => state.inventory);
   const [scannerActive, setScannerActive] = useState(false);
   const [manualBarcode, setManualBarcode] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);

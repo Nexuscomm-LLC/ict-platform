@@ -7,7 +7,6 @@ import {
   FolderKanban,
   Calendar,
   DollarSign,
-  MoreVertical,
   MapPin,
 } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '../hooks';
